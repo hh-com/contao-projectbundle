@@ -1,6 +1,6 @@
 {
     "name":"hh-com/contao-projectbundle",
-    "description":"Contao 4 boilerplate bundle",
+    "description":"Contao 5 boilerplate bundle",
     "type":"contao-bundle",
     "license":"LGPL-3.0-or-later",
     "require":{
@@ -12,10 +12,26 @@
     },
     "autoload": {
         "psr-4": {
-			"Hhcom\\ContaoSimpleEvents\\": "src/"
+			"Hhcom\\ContaoProjectBundle\\": "src/"
+        },
+        "classmap": [
+            "contao/"
+        ],
+        "exclude-from-classmap": [
+            "contao/config/",
+            "contao/dca/",
+            "contao/languages/",
+            "contao/templates/",
+            "contao/themes/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "contao/manager-plugin": true
         }
     },
     "extra": {
-		"contao-manager-plugin": "Hhcom\\ContaoProjectBundle\ContaoManager\\Plugin"
+		"contao-manager-plugin": "Hhcom\\ContaoProjectBundle\\ContaoManager\\Plugin"
     }
 }

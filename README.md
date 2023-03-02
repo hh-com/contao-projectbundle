@@ -1,4 +1,4 @@
-## Boilerplate for Contao Bundle
+## Boilerplate for Contao Bundle (Contao 5)
 
 ## Install
 

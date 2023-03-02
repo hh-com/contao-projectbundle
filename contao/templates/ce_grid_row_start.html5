@@ -1,0 +1,10 @@
+
+<div class="element wrapper 
+    <?php echo $this->grid_fullwidth; ?> 
+    <?php echo $this->grid_css; ?> 
+    <?php echo $this->grid_backgroundcolor; ?> 
+    <?php echo $this->grid_bottomspace; ?>
+    <?php if ($this->grid_paddingless) echo 'is-paddingless'; ?>
+    <?php if ($this->grid_marginless) echo 'addMarginless'; ?>
+    ">
+<div class="row <?php if($this->grid_element_align) echo "is-".$this->grid_element_align; ?> <?php echo $this->grid_bottomspace; ?>">  
