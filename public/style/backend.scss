@@ -1,7 +1,9 @@
 h1, h2, h3, h4, h5 ,h6 {
     margin: 0 0 .5rem 0;
 }
-.grid_row_start {
+.grid_row_start,
+.accordionStart,
+.accordionStop  {
     box-shadow: 0px -3px 12px -6px #000;
     flex: 0 0 99% !important;
     max-width: 99% !important;
@@ -10,10 +12,12 @@ h1, h2, h3, h4, h5 ,h6 {
 .grid_row_end {
     box-shadow: 0px 3px 12px -6px #000;
 }
-
-.limit_height {
-    
+.contentList {
+    .tl_content {
+        padding-bottom: 18px;
+    }
 }
+
 .cte_type {
     text-align: left;
 }

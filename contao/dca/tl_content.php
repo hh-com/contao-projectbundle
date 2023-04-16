@@ -25,7 +25,7 @@ Contao\Files::getInstance()->rrdir('var/cache/prod/contao', true);
     ';
 
 if (Contao\Input::get('do') == 'article' || Contao\Input::get('do') == 'news') {
-    $dontShowGridSelectorIn = ['__selector__','grid_row_start','grid_row_end'];
+    $dontShowGridSelectorIn = ['__selector__','grid_row_start','grid_row_end', 'accordsionStop'];
 
     foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $key => $value)
     {

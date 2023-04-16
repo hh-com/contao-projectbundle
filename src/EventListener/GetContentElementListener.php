@@ -1,5 +1,5 @@
 <?php
-// src/EventListener/GetContentElementListener.php
+
 namespace Hhcom\ContaoProjectBundle\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
@@ -26,36 +26,11 @@ class GetContentElementListener
 
     // Backend
     public function prepareBackend(ContentModel $contentModel, string $buffer, $element) {
-        
-
-         #return $buffer;
-        //  if ($contentModel->invisible) {
-        //     return $buffer;
-        // }
-
-        // // Do not add a container // $contentModel->grid_nocontainer
-        // if ($contentModel->grid_nocontainer) {
-        //     return $buffer;
-        // }
-
 
         $style = $this->prepareStyleString($contentModel);
         $classstring = $style['string'].' '.$contentModel->type;
-        #return $buffer;
         return $buffer.'<span class="begridhelper" data-gridstyle="'.$classstring.'">'.$classstring.'</span>';
 
-
-        echo '<pre>';
-        var_dump($buffer);
-        exit;
-        
-        if (strpos($modifiedCssID[1], 'col-') !== false) {
-            return $buffer.'<span class="begridhelper" '.$addLineBreakBe.' data-gridstyle="'.trim($modifiedCssID[1]).'">'.trim($modifiedCssID[1]).'</span>';
-        } else {
-            return $buffer.'<span class="begridhelper" '.$addLineBreakBe.' data-gridstyle="col-12">kein CSS Style</span>';
-        }
-
-        return $buffer;
     }
 
     // Frontend
@@ -63,7 +38,6 @@ class GetContentElementListener
         
         $dontCreateContainerOn = ['grid_row_start', 'grid_row_end'];
 
-        #return $buffer;
         if ($contentModel->invisible) {
             return $buffer;
         }
@@ -74,8 +48,6 @@ class GetContentElementListener
         }
 
         $style = $this->prepareStyleString($contentModel);
-
-        
 
         $return = "";
 
@@ -93,8 +65,8 @@ class GetContentElementListener
 
         return $return;
 
-        // $buffer = preg_replace('/class="/','class=" ffff '.trim(
-        //     " " .$outerCss
+        // $buffer = preg_replace('/class="/','class=" test '.trim(
+        //     " "
         // ) .' ', $buffer, 1);
     }
 
@@ -164,134 +136,6 @@ class GetContentElementListener
             'array' => $arr,
         ];
 
-    }
-
-
-    public function oldInvoke(ContentModel $contentModel, string $buffer, $element): string
-    {
-      
-
-       
-        return $buffer;
-        // Backend
-        $addLineBreakBe = '';
-
-        // Frontend
-        $createInnerContainer = false;
-        $addLineBreakFE = '';
-        $fullWidthFE = '';
-        $bgcolor = '';
-        $contentAlign = '';
-        $elementAlign = ''; 
-
-
-        // Todo:
-        //$contentModel->noContainer around $buffer
-       
-
-        // Grid Classes entered in the grid_css field
-        $modifiedCssID[1] = "col";
-        if ($contentModel->grid_css) {
-            $modifiedCssID[1] = implode(" ", array_unique(explode(" ", str_replace("none", "", $contentModel->grid_css))));
-        }
-        
-        // Create a line break
-        if ($contentModel->grid_linebreak) {
-            $addLineBreakBe = 'data-linebreak="true"';
-            $addLineBreakFE = '<div class="linebreak col-12" aria-hidden="true"></div>';
-        }
-
-        if ($contentModel->grid_backgroundcolor) {
-            $bgcolor = " ".$contentModel->grid_backgroundcolor;
-        }
-
-        if ($contentModel->grid_content_align) {
-            if ( $contentModel->grid_content_align != "left") {
-                $contentAlign = " content-".$contentModel->grid_content_align;
-            }
-        }
-
-        if ($contentModel->grid_element_align) {
-            $elementAlign = " is-center";
-        }
-        
-
-        if ($contentModel->grid_fullwidth) {
-            
-            if ($contentModel->grid_fullwidth == "content100") {
-                #$modifiedCssID[1] = "";
-                $fullWidthFE = " fullwidth";
-                $createInnerContainer = true;
-            }
-            if ($contentModel->grid_fullwidth == "content100padding") {
-                #$modifiedCssID[1] = "";
-                $fullWidthFE = " fullwidthpadding";
-                $createInnerContainer = true;
-            }
-            if ($contentModel->grid_fullwidth == "bgcolor100") {
-                $fullWidthFE = " fullwidthbg";
-            }
-        }
-
-        // Testing all 
-        if (true) {
-            #$modifiedCssID[1] = " col-12 col-6-md col-3-lg ";
-            #$fullWidthFE = ' fullwidth';
-            #$bgcolor = ' bgcolor2';
-            #$contentAlign = ' content-center';
-        }
-
-        
-       
-
-        // Backend
-        if (System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest(
-            System::getContainer()->get('request_stack')->getCurrentRequest())) {
-
-              
-            #$replaceWith = 'data-gridstyle="'.trim($modifiedCssID[1]).'" '.$addLineBreakBe.' class=" begridhelper ';
-
-            if (strpos($modifiedCssID[1], 'col-') !== false) {
-                return $buffer.'<span class="begridhelper" '.$addLineBreakBe.' data-gridstyle="'.trim($modifiedCssID[1]).'">'.trim($modifiedCssID[1]).'</span>';
-            } else {
-                return $buffer.'<span class="begridhelper" '.$addLineBreakBe.' data-gridstyle="col-12">kein CSS Style</span>';
-            }
-            
-
-        } else { // Frontend
-
-            if ($createInnerContainer == true) {
-
-                $strBuffer = preg_replace('/class="/','class="'.trim( 
-                    $fullWidthFE .
-                    $bgcolor .
-                    $contentAlign 
-    
-                ) .' ', $buffer, 1);
-
-                $strBuffer = preg_replace('/>/','><div class="fdg '.trim(
-                    $modifiedCssID[1] .
-                    $elementAlign
-                ) .'"> ', $strBuffer, 1)
-                . '</div>';
-
-
-            } else {
-                $strBuffer = preg_replace('/class="/','class="'.trim(
-                    $modifiedCssID[1] . 
-                    $fullWidthFE .
-                    $bgcolor .
-                    $contentAlign .
-                    $elementAlign
-    
-                ) .' ', $buffer, 1);
-            }
-           
-
-            return $addLineBreakFE . $strBuffer;
-
-        }
-    
     }
 
     // Remove unwanted classes from the grid_css field
