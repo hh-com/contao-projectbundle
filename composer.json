@@ -32,6 +32,13 @@
         }
     },
     "extra": {
-		"contao-manager-plugin": "Hhcom\\ContaoProjectBundle\\ContaoManager\\Plugin"
+		"contao-manager-plugin": "Hhcom\\ContaoProjectBundle\\ContaoManager\\Plugin",
+        "contao": {
+            "sources": {
+                "src/files/contaodemo": "files/contaodemo",
+                "src/templates/official-demo-for-contao-4.13.12.sql": "templates/official-demo-for-contao-4.13.12.sql",
+                "src/templates/contaodemo": "templates/contaodemo"
+            }
+        }
     }
 }
