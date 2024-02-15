@@ -1,0 +1,103 @@
+.mod_newsmenu {
+    ul {
+        padding: 0;
+        list-style-type: none;
+
+        &.level_1 {
+            > li {
+                > a {
+                    font-weight: bold;
+                }
+            }
+           
+        }
+        &.level_2 {
+            margin-bottom: 2rem;
+            a {
+                color: var( --color-darkGrey );
+            }
+        }
+    }
+}
+.mod_newsreader {
+    .layout_full {
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        margin-left: calc(var(--grid-gutter) / -2);
+        margin-right: calc(var(--grid-gutter) / -2);
+        flex-wrap: wrap;
+        > *:not([class*="col"]) {
+            flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
+            max-width: calc((100% / (12/12)) - var(--grid-gutter));
+            margin: 0 calc(var(--grid-gutter) / 2) calc(var(--grid-gutter) / 2);
+        }
+    }
+}
+
+.mod_newslist {
+
+    .layout_latest  {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-lightGrey);
+        &:last-of-type {
+            border-bottom: none;
+        }
+        .info {
+            color: var(--color-grey);
+            font-size: 0.8rem;
+        }
+        .more {
+            font-size: 0.8rem;
+        }
+
+        // clear both after
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    .layout_simple {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-lightGrey);
+        &:last-of-type {
+            border-bottom: none;
+        }
+        time {
+            color: var(--color-grey);
+            font-size: 0.8rem;
+            display: block;
+        }
+    }
+    .layout_short  {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-lightGrey);
+        &:last-of-type {
+            border-bottom: none;
+        }
+        .info {
+            color: var(--color-grey);
+            font-size: 0.8rem;
+        }
+        .more {
+            font-size: 0.8rem;
+        }
+    }
+    .image_container {
+        &.float_left {
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            float:left;
+        }
+        &.float_right {
+            margin-bottom: 2rem;
+            margin-left: 2rem;
+            float:right;
+        }
+    }
+}

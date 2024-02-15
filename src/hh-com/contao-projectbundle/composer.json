@@ -1,0 +1,44 @@
+{
+    "name":"hh-com/contao-projectbundle",
+    "description":"Contao 5 boilerplate bundle",
+    "type":"contao-bundle",
+    "license":"LGPL-3.0-or-later",
+    "require":{
+        "php": "^8.2",
+        "contao/core-bundle": "^5.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "autoload": {
+        "psr-4": {
+			"Hhcom\\ContaoProjectBundle\\": "src/"
+        },
+        "classmap": [
+            "contao/"
+        ],
+        "exclude-from-classmap": [
+            "contao/config/",
+            "contao/dca/",
+            "contao/languages/",
+            "contao/templates/",
+            "contao/themes/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "contao/manager-plugin": true
+        }
+    },
+    "extra": {
+		"contao-manager-plugin": "Hhcom\\ContaoProjectBundle\\ContaoManager\\Plugin",
+        "contao": {
+            "sources": {
+                "src/files/contaodemo": "files/contaodemo",
+                "src/templates/official-demo-for-contao-4.13.12.sql": "templates/official-demo-for-contao-4.13.12.sql",
+                "src/templates/contaodemo": "templates/contaodemo"
+            }
+        }
+    }
+}

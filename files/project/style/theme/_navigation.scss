@@ -1,0 +1,273 @@
+@media screen and (min-width: 900px) {
+    .mobile-nav-toggle {
+        display: none;
+    }
+    .navigation_main {
+
+        ul, li, a, span, strong {
+            margin: 0; 
+            padding: 0; 
+            line-height: normal; 
+            list-style: none; 
+            display: block; 
+            position: relative;
+            background-color: #fff;
+        }
+
+
+        ul.level_1 {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: -1px;
+
+            > li {
+                > a,
+                > span,
+                > strong {
+                    padding: 0.7rem 2rem;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+
+                &:hover, 
+                &:focus {
+
+                    > a,
+                    > span,
+                    > strong {
+                        background-color: #efefef;
+                        
+                    }
+
+                    > ul.level_2 {
+                        display: block;
+                    }
+
+                }
+        
+            }
+        }
+
+
+        ul.level_2 {
+            display: none;
+            z-index: 5;
+            position: absolute;
+            box-shadow: 0 4px 9px -5px rgb(0 0 0 / 75%);
+            min-width: 100%;
+            width: auto;
+            margin-top: 1px;
+
+            > li {
+                > a,
+                > span,
+                > strong {
+                    padding: 0.5rem 2rem;
+                }
+
+                &:hover, 
+                &:focus {
+                    > a,
+                    > span,
+                    > strong {
+                        background-color: #efefef;
+                    
+                    }
+
+                    > ul.level_3 {
+                        display: block;
+                    }
+                }
+            }
+            > li.submenu {
+                > a,
+                > span,
+                > strong {
+                    &:after {
+                        content: "\279E";
+                        position: absolute;
+                        top: 0;
+                        right: .5rem;
+                        bottom: 0;
+                        align-items: center;
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        ul.level_3 {
+
+            display: none;
+            //display: block;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            box-shadow: 0 4px 9px -5px rgb(0 0 0 / 75%);
+            margin-left: 1px;
+            width: 100%;
+            > li {
+                > a,
+                > span,
+                > strong {
+                    width: 100%;
+                    padding: 0.5rem 2rem;
+                }
+
+                &:hover, 
+                &:focus {
+                    > a,
+                    > span,
+                    > strong {
+                        background-color: #efefef;
+                    
+                    }
+
+                }
+            }
+
+            
+        }
+
+        
+        
+    
+    }
+}
+// Mobile Navigation
+@media screen and (max-width: 899px) {
+    .mobile-nav-toggle {
+        display: block;
+        clear: both;
+        font-size: 3rem;
+        font-weight: bold;
+        position: absolute;
+        right: 2rem;
+        z-index: 999;
+        line-height: 3rem;
+
+        &::after {
+            content: "\002630";
+            
+        }
+        &.active::after {
+            content: "\002716";
+        }
+    }
+
+    .navigation_main {
+        display: none;     
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 1.5rem -0.8rem rgb(0 0 0 / 75%); 
+        z-index: 15;
+        &.active {
+            display: block;
+        }
+        
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                > a {
+                    display: block;
+                    padding: 1rem;
+                }
+                > strong {
+                    display: block;
+                    padding: 1rem;
+                }
+                >.hide-mobile {
+                    
+                }
+                
+            } 
+
+        }
+
+        ul.level_1 {
+            > li {
+                
+                > a {
+                    font-weight: bold;
+                }
+                > strong {
+                    background-color: #aaa;
+                    &::before {
+                        content: '\00276F';
+                        margin-right: 8px;
+                    }
+                    &.trail {
+                       
+                    }
+                }
+               
+                >.trail {
+                    background-color: #eee;
+                }
+                &.active,
+                &.trail {
+                    background-color: #eee;
+                }
+            }
+           
+
+        }
+
+        ul.level_2 {
+            
+            > li {
+               
+                > a {
+                    padding-left: 2rem;
+                }
+                > strong {
+                    padding-left: 2rem;
+                    background-color: #aaa;
+                    &::before {
+                        content: '\00276F';
+                        margin-right: 8px;
+                    }
+                    &.trail {
+                       
+                        &::before {
+                            content: '';
+                        }
+                    }
+                  
+                }
+                >.trail {
+                    background-color: #eee;
+                }
+
+            }
+        }
+
+        ul.level_3 {
+          
+            > li {
+               
+                > a {
+                    padding-left: 3rem;
+                }
+                > strong {
+                    padding-left: 3rem;
+                    background-color: #aaa;
+                    &::before {
+                        content: '\00276F';
+                        margin-right: 8px;
+                    }
+                    &.trail {
+                        color: green;
+                    }
+                }
+                >.trail {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}

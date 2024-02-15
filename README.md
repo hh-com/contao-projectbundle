@@ -1,27 +1,8 @@
-## Boilerplate for Contao Bundle (Contao 5)
+## Boilerplate for Contao Bundle (Contao 5.3)
 
-## Install
+1. Create a contao project with the manager
+2. Copy all folder into the root dir
+3. Clear cache and install the included bundle
+4. Clear cache and update database
+5. Create a new BackendUSER!
 
-Copy to:  
-root  
-\- src  
-\- - hh-com  
-\- - - contao-projectbundle  
-
-Update your contao installation composer.json
-``` code
-"repositories": [
-    {
-        "type": "path",
-        "url": "src/hh-com/contao-projectbundle",
-        "options": {
-                "symlink": true
-        }
-    }
-],
-"require": {
-    ...
-    "hh-com/contao-projectbundle": "@dev",
-    ... 
-}
-```

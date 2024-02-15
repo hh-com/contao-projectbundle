@@ -1,0 +1,35 @@
+
+:root { 
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f3f3f6;
+    --color-primary: #14854F;
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #747681;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 1200px; // Change Container Width
+    --grid-gutter-minus: 1rem;
+    --grid-gutter: 2rem;
+    --grid-gutter-plus: 3rem;
+    --font-size: 1.6rem;
+    --bgcolor1: #efeff0;
+    --bgcolor2: rgb(149, 211, 187);
+    --bgcolor3: rgb(167, 191, 236);
+}
+
+@import "./theme/reset";
+
+@import "./theme/util";  
+@import "./theme/fonts";
+@import "./theme/grid";  
+@import "./theme/form";  
+@import "./theme/util";  
+
+@import "./theme/base";
+@import "./theme/header";  
+@import "./theme/footer";  
+@import "./theme/navigation";  
+@import "./theme/content";
+@import "./theme/modules";
+@import "./custom";  

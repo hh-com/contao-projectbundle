@@ -1,0 +1,151 @@
+body {
+    background-color: #fff;
+}
+
+#container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+blockquote {
+    background-color: #f3f3f6;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--color-lightGrey);
+}
+
+hr {
+    border: none;
+    background-color: #aaa;
+    height: 1px;
+    
+    margin: 0 calc(var(--grid-gutter) / 2) 0;
+    width: calc(100% - var(--grid-gutter));
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+
+    tr {
+        &:hover {
+            background-color: #fafafa;
+        }
+
+        td,
+        th {
+            vertical-align: middle;
+            padding: 1.2rem 0.4rem;
+        }
+    }
+
+    thead {
+        border-bottom: 2px solid #f3f3f6;
+    }
+    .tbody {
+
+    }
+    tfoot {
+        border-top: 2px solid #f3f3f6;
+    }
+}
+.striped table tr:nth-of-type(2n) {
+    background-color: #f3f3f6;
+}
+
+.ce_accordionSingle {
+    margin-bottom: 0.2rem;
+    &:last-of-type {
+        margin-bottom: 3rem;
+    }
+}
+
+.ce_accordion {
+
+
+    .toggler {
+        display: block;
+        padding: 1rem;
+        cursor: pointer;
+        background: #efefef;
+        color: #333;
+        position: relative;
+        &:after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-top: -1rem;
+            font-weight: bold;
+        }
+    }
+
+    .accordion {
+
+        padding: 1rem;
+    }
+
+    .toggler:target + .accordion {
+        display: block;
+        border: 1px solid black;
+    }
+}
+
+
+//col-12 col-12-md col-12-lg ce_accordionSingle ce_accordion ce_text block
+// .accordion__item, .ce_accordion {
+//     &__title, .toggler {
+//         display: block;
+//         padding: 20px;
+//         cursor: pointer;
+//         background: #eee;
+//         color: #333;
+//         position: relative;
+//         &:after {
+//             content: '+';
+//             position: absolute;
+//             right: 20px;
+//             top: 50%;
+//             font-size: 2rem;
+//             line-height: 2rem;
+//             margin-top: -1rem;
+//             font-weight: bold;
+//         }
+
+//         &:target + .accordion,
+//         &:focus + .accordion {
+//             display: block;
+//         }
+//     }
+//     &:nth-of-type(2n) &__title, .toggler {
+//       background: #ddd;
+//     }
+//     &__content, .accordion { 
+//       display: none;
+//       padding: 20px;
+//       &:target, 
+//       &:focus {
+//         display: block;
+//       }
+//     }
+//   }
+
+  
+
+
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+

@@ -1,0 +1,20 @@
+header_1920x1080: Header Banner
+header_1920x540: Header Banner - Small
+landscape_1200x675: Querformat - Crop
+landscape_1000x563: Querformat - Crop
+landscape_780x439: Querformat - Crop
+square_1200x1200: Quadrat - Crop
+square_1000x1000: Quadrat - Crop
+square_800x800: Quadrat - Crop
+square_600x600: Quadrat - Crop
+square_400x400: Quadrat - Crop
+square_300x300: Quadrat - Crop
+portrait_675x1200: Hochformat - Crop
+portrait_563x1000: Hochformat - Crop
+portrait_450x800: Hochformat - Crop
+thumb_400: Thumb - Crop
+thumb_300: Thumb - Crop
+thumb_150: Thumb - Crop
+thumb_100: Thumb - Crop
+thumb_70: Thumb - Crop
+thumb_40: Thumb - Crop

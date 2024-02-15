@@ -1,0 +1,42 @@
+#header {
+
+    box-shadow: 0 0 1.5rem -0.8rem rgb(0 0 0 / 75%);
+
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        a  {
+            font-weight: bold;
+            font-size: .85rem;
+        }
+
+        .left { 
+            a {
+                margin-right: 1rem;
+            }
+           
+        }
+        .right {
+            a {
+                margin-left: 1rem;
+            }
+            
+        }
+    }
+
+    .logo {
+
+        text-align: center;
+        margin: 0 auto 1rem;
+        
+        .logo-image {
+            border: 1px solid yellow;
+        }
+
+
+    }
+}

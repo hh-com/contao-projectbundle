@@ -1,0 +1,246 @@
+contao:
+    localconfig:
+        resultsPerPage: 80
+        
+    image:
+        sizes:
+            _defaults:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 0.75x, 2x
+                lazy_loading: true
+                resize_mode: crop
+
+            header_1920x1080:
+                width: 1920
+                height: 1080
+                resize_mode: box
+                densities: 1.25x
+                css_class: headerbannerfull
+                items:
+                    -
+                        media: '(max-width: 512px)'
+                        width: 512
+                        height: 288
+                        resize_mode: box
+                        densities: 2x
+                    -
+                        media: '(max-width: 1024px)'
+                        width: 1024
+                        height: 576
+                        resize_mode: box
+                        densities: 1.5x
+                        
+            header_1920x540:
+                width: 1920
+                height: 540
+                resize_mode: box
+                densities: 1.25x
+                css_class: headerbannerhalf
+                items:
+                    -
+                        media: '(max-width: 512px)'
+                        width: 512
+                        height: 144
+                        resize_mode: box
+                        densities: 2x
+                    -
+                        media: '(max-width: 1024px)'
+                        width: 1024
+                        height: 288
+                        resize_mode: box
+                        densities: 1.5x
+
+            landscape_1200x675:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 1200
+                height: 675
+
+            landscape_1000x563:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 1000
+                height: 563
+
+            landscape_780x439:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 780
+                height: 439
+
+            square_1200x1200:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 1200
+                height: 1200
+
+            square_1000x1000:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 1000
+                height: 1000
+
+            square_800x800:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 800
+                height: 800
+
+            square_600x600:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 600
+                height: 600
+
+            square_400x400:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 400
+                height: 400
+            
+            square_300x300:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                resize_mode: crop
+                width: 300
+                height: 300
+
+            portrait_675x1200:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 675
+                height: 1200
+
+            portrait_563x1000:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 563
+                height: 1000
+
+            portrait_450x800:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: crop
+                width: 450
+                height: 800
+
+            thumb_400:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 400
+                height: 400
+
+            thumb_300:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 300
+                height: 300
+
+            thumb_150:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 150
+                height: 150
+
+            thumb_100:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 100
+                height: 100
+
+            thumb_70:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 70
+                height: 70
+
+            thumb_40:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 1x
+                lazy_loading: true
+                resize_mode: box
+                width: 40
+                height: 40
