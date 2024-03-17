@@ -34,6 +34,8 @@ $GLOBALS['TL_LANG']['grid_bottomspace'] = ["Abstand unter dem Element", "Wählen
 $GLOBALS['TL_LANG']['grid_bottomspace_reference'] = [
     'bottomspaceMin' => 'Minimiert',
     'bottomspace0' => 'Kein Abstand',
+    'bottomspace1-5x' => '1.5 facher Abstand',
+    'bottomspace2x' => '2 facher Abstand',
 ];
 
 $GLOBALS['TL_LANG']['grid_backgroundcolor_reference'] = [

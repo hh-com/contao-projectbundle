@@ -118,7 +118,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['grid_bottomspace'] = [
     'label'                   => &$GLOBALS['TL_LANG']['grid_bottomspace'],       
     'exclude'                 => true,
     'inputType'               => 'select',
-    'options'                 => ['bottomspaceMin' ,'bottomspace0'],
+    'options'                 => ['bottomspaceMin','bottomspace0','bottomspace1-5x','bottomspace2x'],
     'reference'               => &$GLOBALS['TL_LANG']['grid_bottomspace_reference'],
     'eval'                    => ['tl_class'=>'w50','includeBlankOption'=>true],
     'sql'                     => "varchar(32) NOT NULL default ''"
