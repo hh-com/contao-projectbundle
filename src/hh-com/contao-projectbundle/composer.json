@@ -4,7 +4,7 @@
     "type":"contao-bundle",
     "license":"LGPL-3.0-or-later",
     "require":{
-        "php": "^8.2",
+        "php": "^8.0",
         "contao/core-bundle": "^5.0"
     },
     "require-dev": {
