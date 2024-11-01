@@ -1,9 +1,7 @@
-
 /**
  * Grid Selector
  */
-document.addEventListener("DOMContentLoaded", function(event) {
-
+function initGridSelector() {
     /**
      * Grid Selector at each content element
      */
@@ -60,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 if (selectElement.options[i].value == cssClasses[a]) {
                     selectElement.options[i].selected = true;
                     console.log(selectId);
-                    document.querySelector('#select_'+selectId+'_chzn a span').innerHTML = selectElement.options[i].text;
+                    //document.querySelector('#select_'+selectId+'_chzn a span').innerHTML = selectElement.options[i].text;
+                    //document.querySelector('#select_'+selectId+' a span').innerHTML = "dfdfdf";
                 }
             }
         }
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /**
      * Content - Element List View - Grid Layout
      */
-    const elements = document.querySelectorAll('.begridhelper');
+    const elements = document.querySelectorAll('.begridhelper:not(.content-element-group .begridhelper)');
     
     if (elements.length > 0) {
 
@@ -99,4 +98,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
         });
     }
-});
+
+    const elementsInGroup = document.querySelectorAll('.content-element-group .begridhelper');
+
+    if (elementsInGroup.length > 0) {
+
+        let conainer = document.querySelector('.content-element-group');
+        conainer.classList.add('contentList');
+
+        let ulConainer = document.querySelector('.content-element-group > div');
+        ulConainer.classList.add('row');
+
+        elementsInGroup.forEach( el => {
+            let col = el.getAttribute('data-gridstyle');
+
+            if (col) {
+                console.log( el.previousElementSibling );
+                el.previousElementSibling.className += col.trim();
+            }
+
+            let linebreak = el.getAttribute('data-linebreak');
+            if (linebreak == 'true') {
+                const breaker = document.createElement("div");
+                breaker.classList.add('col-12');
+                breaker.classList.add('linebreak');                
+                el.closest('div').before(breaker);
+            }
+        
+        });
+    }
+}
+
+console.log(typeof Turbo);
+// Check if Turbo.js is available
+if (typeof Turbo !== 'undefined') {
+    document.addEventListener("turbo:load", function(event) {
+        initGridSelector();
+    });
+} else {
+    document.addEventListener("DOMContentLoaded", function(event) {
+        initGridSelector();
+    });
+}
