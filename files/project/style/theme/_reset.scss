@@ -9,6 +9,17 @@
 	position: absolute;
 	width: 1px;
 }
+.invisible:active,
+.invisible:focus, 
+.invisible:focus-visible 
+{
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
 iframe {
 	border: 0;
 }
