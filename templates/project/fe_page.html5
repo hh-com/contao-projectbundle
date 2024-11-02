@@ -32,6 +32,8 @@
 </head>
 <body id="top"<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?><?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
 
+  <a href="{{env::request}}#main" class="invisible">Jump to the content</a>
+
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
 
