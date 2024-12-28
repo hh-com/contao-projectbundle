@@ -1,6 +1,25 @@
+<?php
+
+$this->rootAttributes = $this
+    ->attr()
+    ->set('lang', $this->language)
+    ->set('dir', 'rtl', $this->isRTL)
+    ->mergeWith($this->rootAttributes)
+;
+
+$this->bodyAttributes = $this
+    ->attr()
+    ->set('id', 'top')
+    ->addClass($this->class)
+    ->setIfExists('onload', $this->onload)
+    ->mergeWith($this->bodyAttributes)
+;
+
+?>
 <!DOCTYPE html>
-<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+<html<?= $this->rootAttributes ?>>
 <head>
+
   <?php $this->block('head'); ?>
     <meta charset="<?= $this->charset ?>">
     <title><?= $this->title ?></title>
@@ -23,16 +42,8 @@
     <?= $this->head ?>
   <?php $this->endblock(); ?>
 
-  <?php
-        
-  global $objPage;
-
-  ?>
-
 </head>
-<body id="top"<?php if ($this->class): ?> class="<?= $this->class ?>"<?php endif; ?><?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
-
-  <a href="{{env::request}}#main" class="invisible">Jump to the content</a>
+<body<?= $this->bodyAttributes ?>>
 
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
@@ -42,12 +53,14 @@
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
           <header id="header">
-
             <div class="inside">
-            <?= $this->header ?>
-            </div>
-            
+              <?= $this->header ?>
+			  
+			   
             <?php
+			
+			  global $objPage;
+			
               $headerimage = $objPage->singleSRC;
               $headersize = $objPage->imageSize;
               
@@ -59,6 +72,7 @@
             ?>
 
           {{picture::<?= $headerimage ?>?size=<?= $headersize ?>&template=picture_default}}
+            </div>
           </header>
         <?php endif; ?>
       <?php $this->endblock(); ?>
