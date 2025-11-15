@@ -1,4 +1,4 @@
-## Boilerplate for Contao Bundle (Contao 5.4)
+## Boilerplate for Contao Bundle (Contao 5.6)
 
 1. Create a contao project with the manager
 2. Copy all folder into the root dir
