@@ -40,8 +40,8 @@ if (Contao\Input::get('do') == 'article' || Contao\Input::get('do') == 'news') {
             continue;
 
         $GLOBALS['TL_DCA']['tl_content']['palettes'][$key] = str_replace(
-            'type,',
-            'type,grid_content_align;',
+            'type',
+            'type;grid_content_align;',
             $GLOBALS['TL_DCA']['tl_content']['palettes'][$key]
         );
 
